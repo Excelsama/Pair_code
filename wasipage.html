@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+    body {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      height: 100vh;
+      margin: 0;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
+      color: #e0e0e0;
+      animation: bgColorChange 4s infinite alternate;
+      transition: background-color 1s;
+    }
+
+    @keyframes bgColorChange {
+      0% { background-color: black; }
+      100% { background-color: black; }
+    }
+
+    header {
+      text-align: center;
+      padding: 1em;
+      width: 100%;
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.7);
+      font-size: 24px;
+      color: white;
+      background-color: rgba(0, 0, 0, 0.5);
+      border: 3px solid transparent;
+      border-image: linear-gradient(45deg, #ff007a, #00aaff, #ffda44, #37ff8b);
+      border-image-slice: 1;
+    }
+
+    header h1 {
+      font-size: 2em;
+      margin: 0;
+      font-weight: bold;
+      text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.6);
+      animation: textGlow 2s infinite alternate;
+    }
+
+    header p {
+      margin-top: 0.5em;
+      font-size: 1.2em;
+      font-weight: 300;
+      color: #dcdcdc;
+    }
+
+    @keyframes textGlow {
+      0% { color: #ff007a; }
+      100% { color: #00aaff; }
+    }
+
+    .btn {
+      width: 90%;
+      max-width: 220px;
+      padding: 1em 2em;
+      background-color: #1c1c1c;
+      border-radius: 8px;
+      margin: 12px 0;
+      font-size: 18px;
+      color: #ffffff;
+      cursor: pointer;
+      position: relative;
+      z-index: 1;
+      text-align: center;
+      transition: color 0.3s ease;
+      animation: bounce 2s infinite;
+    }
+
+    /* Bounce animation */
+    @keyframes bounce {
+      0%, 20%, 50%, 80%, 100% { transform: translateY(0); }
+      40% { transform: translateY(-10px); }
+      60% { transform: translateY(-5px); }
+    }
+
+    .btn:before {
+      content: "";
+      position: absolute;
+      top: -2px;
+      left: -2px;
+      right: -2px;
+      bottom: -2px;
+      z-index: -1;
+      background: linear-gradient(120deg, #ff007a, #ffda44, #37ff8b, #00aaff, #ff007a);
+      border-radius: 10px;
+      background-size: 300%;
+      animation: borderRotate 4s linear infinite;
+    }
+
+    @keyframes borderRotate {
+      0% { background-position: 0% 50%; }
+      100% { background-position: 100% 50%; }
+    }
+
+    .btn:hover {
+      background-color: #00aaff;
+      color: #ffffff;
+      box-shadow: 0 0 15px #00aaff, 0 0 30px #00aaff, 0 0 45px #00aaff;
+    }
+
+    footer {
+      color: #8e8e93;
+      font-size: 14px;
+      text-align: center;
+      width: 100%;
+      padding: 10px 0;
+    }
+
+    footer a {
+      color: #007AFF;
+      text-decoration: none;
+      transition: color 0.3s ease;
+    }
+
+    footer a:hover {
+      color: #0056b3;
+    }
+
+    /* Responsive adjustments */
+    @media (max-width: 600px) {
+      header {
+        font-size: 18px;
+        padding: 0.8em;
+      }
+      .btn {
+        font-size: 16px;
+        padding: 0.8em 1.5em;
+      }
+      header h1, header h2 {
+        font-size: 20px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>𝕊 ℍ 𝔸 𝕂 𝔸-𝔹 𝕆 𝕋 ℤ</h1>
+    <h2>ʙʏ ʜᴀᴋɪ</h2>
+  </header>
+
+  <h2>𝙎𝙚𝙨𝙨𝙞𝙤𝙣𝙨</h2>
+  <button onclick="window.open('#')" class="btn">Creds file</button>
+  <button onclick="window.open('pair.html')" class="btn">Session ID</button>
+
+  <h2>𝘽𝙤𝙩 𝙧𝙚𝙥𝙤𝙨</h2>
+  <button onclick="window.open('https://github.com/hakisolos/Queen_Nikka')" class="btn"><strong>Queen Nikka V1</strong></button>
+  <button onclick="window.open('https://github.com/hakisolos/Nikka-v3.2')" class="btn">Queen Nikka V3</button>
+  <button onclick="window.open('https://github.com/hakisolos/shaka-md')" class="btn">SHAKA MD</button>
+
+  <h2>𝙒𝙝𝙖𝙩𝙨𝙖𝙥𝙥 𝙎𝙪𝙥𝙥𝙤𝙧𝙩</h2>
+  <button onclick="window.open('https://whatsapp.com/channel/0029VaoLotu42DchJmXKBN3L')" class="btn">Official Channel</button>
+  <button onclick="window.open('https://chat.whatsapp.com/CdF4bo9NLcSBP8ThD2tDko')" class="btn">Official Group</button>
+  <button onclick="window.open('https://wa.me/2349112171078')" class="btn">KING HAKI</button>
+  <button onclick="window.open('https://github.com/hakisolos')" class="btn">Follow Me on GitHub</button>
+
+  <footer>
+    <p>King Haki | <a href="https://github.com/hakisolos" target="_blank">GitHub</a></p>
+  </footer>
+</body>
+</html>

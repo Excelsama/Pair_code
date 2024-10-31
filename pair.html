@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Pair Code</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+  <style>
+    body {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      margin: 0;
+      background: url("https://endpoint.web.id/server/file/ph13Hh3briV0C7.jpg") no-repeat center center fixed;
+      background-size: cover;
+      font-family: 'Georgia', serif;
+    }
+
+    .container {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .box {
+      width: 300px;
+      height: 500px;
+      padding: 20px;
+      text-align: center;
+      background-color: rgba(0, 0, 0, 0.6); /* Transparent black background */
+      border: 1px solid rgba(255, 255, 255, 0.2); /* Subtle light gray border */
+      border-radius: 30px;
+      box-shadow: 0 0 20px rgba(0, 255, 255, 0.7);
+      transition: 0.5s ease;
+    }
+
+    .box:hover {
+      width: 250px;
+      height: 300px;
+      padding: 20px;
+    }
+
+    #text {
+      color: #f6f5f5;
+    }
+
+    .input-container {
+      display: flex;
+      background: #8cabba9e;
+      border-radius: 1rem;
+      padding: 0.3rem;
+      max-width: 300px;
+      width: 100%;
+      gap: 0.3rem;
+    }
+
+    .input-container input {
+      border-radius: 0.8rem 0 0 0.8rem;
+      background: #e8e8e8;
+      width: 100%;
+      flex-basis: 75%;
+      padding: 1rem;
+      border: none;
+      color: #000;
+    }
+
+    .input-container button {
+      flex-basis: 15%;
+      padding: 1rem;
+      background: #b9a0d7;
+      font-weight: 700;
+      color: white;
+      border: none;
+      border-radius: 0 1rem 1rem 0;
+      transition: all 0.2s ease-in-out;
+    }
+
+    .input-container button:hover {
+      background: linear-gradient(135deg, #c01736 0%, #8b17b6 100%);
+    }
+
+    .centered-text {
+      color: rgb(255, 255, 255); /* White text for better readability */
+      font-weight: 700;
+      margin: 10px 0;
+    }
+
+    @media (max-width: 500px) {
+      .box {
+        width: 90%;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="box" id="box">
+      <div id="text">
+        <h3 class="centered-text">𝗦𝗵𝗮𝗸𝗮 𝗯𝗼𝘁𝘇</h3>
+        <h6 class="centered-text">Enter Your Number with Country Code.</h6>
+        <div class="input-container">
+          <input placeholder="911217xxxx" type="number" id="number" required>
+          <button id="submit">𝗦𝘂𝗯𝗺𝗶𝘁</button>
+        </div>
+        
+        <a id="waiting-message" class="centered-text" style="display: none;">Generating...</a>
+        <main id="pair" class="centered-text"></main>
+      </div>
+    </div>
+  </div>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/1.0.0-alpha.1/axios.min.js"></script>
+  <script>
+    let a = document.getElementById("pair");
+    let b = document.getElementById("submit");
+    let c = document.getElementById("number");
+
+    async function Copy() {
+      let text = document.getElementById("copy").innerText;
+      await navigator.clipboard.writeText(text.replace('CODE: ', ''));
+      document.getElementById("copy").innerText = "COPIED";
+      setTimeout(() => {
+        document.getElementById("copy").innerText = text;
+      }, 500);
+    }
+
+    b.addEventListener("click", async (e) => {
+      e.preventDefault();
+      const inputNumber = c.value.replace(/[^0-9]/g, "");
+      if (!inputNumber) {
+        a.innerHTML = '<span style="color:white;font-weight:bold">Enter your WhatsApp number with Country Code</span><br><br>';
+      } else if (inputNumber.length < 11) {
+        a.innerHTML = '<span style="color:red;font-weight:bold">Invalid Number</span><br><br>';
+      } else {
+        c.value = "+" + inputNumber;
+        a.innerHTML = '<span style="color:white;font-weight:bold">𝗣𝗹𝗲𝗮𝘀𝗲 𝗪𝗮𝗶𝘁...</span><br><br>';
+        let { data } = await axios(`/code?number=${inputNumber}`);
+        let code = data.code || "Service Unavailable";
+        a.innerHTML += `<span id="copy" onclick="Copy()" style="color:red;font-weight:bold">CODE: <span style="color:white;font-weight:bold">${code}</span></span><br><br>`;
+      }
+    });
+  </script>
+</body>
+</html>
