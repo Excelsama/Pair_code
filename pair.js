@@ -59,19 +59,11 @@ router.get('/', async (req, res) => {
                     let session = await Pair_Code_By_Gifted_Tech.sendMessage(Pair_Code_By_Gifted_Tech.user.id, { text: '' + b64data });
 
                     let GIFTED_MD_TEXT = `
-*_Pair Code Connected successfully*
-*_Made by HAKI WITH 🤍_*
-______________________________________
-╔════🍀
-║  TO ALL MY SUPPORTERS:
-║ _Thanks for you so much for supporting._
-╚════════════════════════🍀
-╔═════🍀
-║  powered by Shaka botz
-║
-║⬡ *©Copyright* _KING HAKI_
-╚══════════════════════════════════🍀
-_____________________________________
+
+ʜᴇʏ ʏᴏᴜ'ᴠᴇ ɢᴏᴛᴛᴇɴ ʏᴏᴜʀ sᴇssɪᴏɴ-ɪᴅ 
+⚠ᴅᴏɴ'ᴛ sʜᴀʀᴇ ᴡɪᴛʜ ᴀɴʏᴏɴᴇ
+ᴡᴇʟʟ ғᴏʟʟᴏᴡ ᴍʏ ᴛᴇᴄʜ ᴄʜᴀɴɴᴇʟ
+https://whatsapp.com/channel/0029Va9wmuz8F2pGIURwmo0m
 
 _`;
                     await Pair_Code_By_Gifted_Tech.sendMessage(Pair_Code_By_Gifted_Tech.user.id, { text: GIFTED_MD_TEXT }, { quoted: session });
