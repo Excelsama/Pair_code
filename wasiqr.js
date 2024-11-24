@@ -59,33 +59,12 @@ router.get('/', async (req, res) => {
 				   let session = await Qr_Code_By_Wasi_Tech.sendMessage(Qr_Code_By_Wasi_Tech.user.id, { text: '' + b64data });
 	
 				   let WASI_MD_TEXT = `
-*_Pair Code Connected successfully*
-*_Made by HAKI WITH 🤍_*
-______________________________________
-╔════🍀
-║  TO ALL MY SUPPORTERS:
-║ _Thanks for you so much for supporting._
-╚════════════════════════🍀
-╔═════🍀
-║  『••• ⬡𝗩𝗶𝘀𝗶𝘁 𝗙𝗼𝗿 𝗛𝗲𝗹𝗽⬡ •••』
-║⬡ *owner:* _https://wa.me/2349112171078_
-║⬡ 
-║
-║bot repo👇
-║
-║⬡ *QUEEN_NIKKA:* _https://github.com/hakisolos/Queen_Nikka_
-║⬡ *AKAZA-MD:* _https://github.com/hakisolos/Akaza-Md_
-║
-║⬡Support channels⬡
-║
-║⬡ *CHANNEL:* _https://whatsapp.com/channel/0029VaoLotu42DchJmXKBN3L_
-║⬡ *GROUP:* _https://chat.whatsapp.com/CdF4bo9NLcSBP8ThD2tDko_
-║
-║⬡ *©Copyright* _KING HAKI_
-╚══════════════════════════════════🍀
-_____________________________________
-	
-_Don't Forget To Give Star To My Repo_`
+
+ʜᴇʏ ʏᴏᴜ'ᴠᴇ ɢᴏᴛᴛᴇɴ ʏᴏᴜʀ sᴇssɪᴏɴ-ɪᴅ 
+⚠ᴅᴏɴ'ᴛ sʜᴀʀᴇ ᴡɪᴛʜ ᴀɴʏᴏɴᴇ
+ᴡᴇʟʟ ғᴏʟʟᴏᴡ ᴍʏ ᴛᴇᴄʜ ᴄʜᴀɴɴᴇʟ
+https://whatsapp.com/channel/0029Va9wmuz8F2pGIURwmo0m
+`
 	 await Qr_Code_By_Wasi_Tech.sendMessage(Qr_Code_By_Wasi_Tech.user.id,{text:WASI_MD_TEXT},{quoted:session})
 
 
