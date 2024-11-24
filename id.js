@@ -1,5 +1,5 @@
 function makeid(num = 4) {
-  let result = "KING-HAKI";
+  let result = "Xcelsama";
   let characters = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789";
   var characters9 = characters.length;
   for (var i = 0; i < num; i++) {
